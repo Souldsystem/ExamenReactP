@@ -82,3 +82,24 @@ npm run build
 
 #se instala cordova
 npm install -g cordova
+
+#se crea proyecto cordoba
+cordova create AppExamenReact
+ cd AppExamenReact
+
+#Se agrega a la plataforma de android al proyecto cordova
+cordova platform add android
+
+#se compila el proyecto para generar una  apk
+cordova build android --release
+
+
+## generar un keystore con keytool
+keytool -genkey -v -keystore my-release-key.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias
+
+##generar Firma el APK con jarsigner
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk my-key-alias
+
+##Optimizar el apk con zpalign
+zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk app-release.apk
+
