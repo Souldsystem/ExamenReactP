@@ -70,6 +70,15 @@ import "bootstrap/dist/css/bootstrap.min.css"
 #para generar dependencias privadas
 npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
---Integrar react-bootstrap en un proyecto React para usar componentes Bootstrap de manera nativa:
+#Integrar react-bootstrap en un proyecto React para usar componentes Bootstrap de manera nativa:
 
 npm install react-bootstrap
+
+#se genera repositorio para el proyecto
+https://github.com/Souldsystem/ExamenReactP
+
+#se genera proyecto para produccion 
+npm run build
+
+#se instala cordova
+npm install -g cordova
